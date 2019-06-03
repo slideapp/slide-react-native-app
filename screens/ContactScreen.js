@@ -4,7 +4,7 @@ import { ExpoLinksView } from '@expo/samples';
 import ContactButton from '../components/ContactButton'
 import { Contacts } from 'expo';
 
-export default class HomeScreen extends React.Component {
+export default class ContactScreen extends React.Component {
   static navigationOptions = {
     title: 'Slide',
   };
