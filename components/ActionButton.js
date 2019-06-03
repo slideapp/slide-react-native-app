@@ -8,8 +8,6 @@ export default class ActionButton extends React.Component {
 
   _onPress = () => {
     color_theme = this.props.action_data['color']
-    console.log("Color theme");
-    console.log(color_theme);
     this.props.navigation('Contact', {color: color_theme})
   };
 

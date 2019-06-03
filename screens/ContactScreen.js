@@ -64,7 +64,6 @@ export default class ContactScreen extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     if ("color" in this.props.navigation.state.params){
       btn_color = this.props.navigation.state.params.color;
     }
