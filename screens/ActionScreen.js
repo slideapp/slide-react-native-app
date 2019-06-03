@@ -7,6 +7,14 @@ import { Contacts } from 'expo';
 export default class ActionScreen extends React.Component {
   static navigationOptions = {
     title: 'Slide',
+    headerTitleStyle: {
+      fontSize: 28,
+      fontFamily: 'System',
+      color: "white",
+    },
+    headerStyle: {
+      backgroundColor: '#16D8C0',
+    },
   };
 
   constructor(props){
@@ -16,12 +24,12 @@ export default class ActionScreen extends React.Component {
 
   componentDidMount(){
     action_list = [
-      {"text": "Hangout", "color": "#16D8C0"},
-      {"text": "Blaze", "color": "#ff5e5b"},
-      {"text": "Interested", "color": "#ffed66"}, 
-      {"text": "Food", "color": "#188fa7"},
-      {"text": "Chill", "color": "#fcbfb7"},
-      {"text": "Something", "color": "#9448bc"}]
+      {"text": "Interested", "color": "#e91e63"},
+      {"text": "Blaze", "color": "#ff4081"},
+      {"text": "Hangout", "color": "#5677fc"},
+      {"text": "Go out", "color": "#40c4ff"}, 
+      {"text": "Chill", "color": "#5af158"},
+      {"text": "Chow down", "color": "#ffd740"},]
     this.setState({
       actions: action_list,
     })

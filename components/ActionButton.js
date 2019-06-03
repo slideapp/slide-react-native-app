@@ -7,8 +7,10 @@ export default class ActionButton extends React.Component {
   }
 
   _onPress = () => {
-    console.log(this.props.data);
-    this.props.navigation('Contact', {name: 'Jane'})
+    color_theme = this.props.action_data['color']
+    console.log("Color theme");
+    console.log(color_theme);
+    this.props.navigation('Contact', {color: color_theme})
   };
 
 	render(){
@@ -31,13 +33,15 @@ const styles = StyleSheet.create({
       marginLeft: 8,
       marginTop: 10,
       height: 80,
-      borderRadius: 10,
+      borderRadius: 20,
       backgroundColor: "#16D8C0",
       justifyContent: 'center',
       alignItems: 'center',
     },
     title: {
       color: "black",
-      fontSize: 30
+      fontSize: 35,
+      fontFamily: 'System',
+      fontWeight: 'bold',
     },
 })

@@ -6,7 +6,15 @@ import { Contacts } from 'expo';
 
 export default class ContactScreen extends React.Component {
   static navigationOptions = {
-    title: 'Slide',
+    title: 'Contacts',
+    headerTitleStyle: {
+      fontSize: 28,
+      fontFamily: 'System',
+      color: "white",
+    },
+    headerStyle: {
+      backgroundColor: '#16D8C0',
+    },
   };
 
   constructor(props){
@@ -56,12 +64,19 @@ export default class ContactScreen extends React.Component {
   }
 
   render() {
+    console.log(this.props);
+    if ("color" in this.props.navigation.state.params){
+      btn_color = this.props.navigation.state.params.color;
+    }
+    else {
+      btn_color = "#16D8C0";
+    }
     return (
       <ScrollView>
         <FlatList
           data={this.state.contacts}
           keyExtractor={(item, index) => index.toString()}
-          renderItem={ ({item}) => <ContactButton data={item} />}      
+          renderItem={ ({item}) => <ContactButton color={btn_color} data={item} />}      
         />
       </ScrollView>
     );
