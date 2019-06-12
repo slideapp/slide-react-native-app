@@ -8,12 +8,17 @@ export default class ActionScreen extends React.Component {
   static navigationOptions = {
     title: 'Slide',
     headerTitleStyle: {
-      fontSize: 28,
+      fontSize: 24,
       fontFamily: 'System',
-      color: "white",
+      color: 'rgb(68, 73, 84)',
     },
     headerStyle: {
-      backgroundColor: '#16D8C0',
+      backgroundColor: '#fff',
+      borderBottomWidth: 0,
+      shadowOffset:{  width: 0 ,  height: .2,  },
+      shadowColor: 'rgb(68, 73, 84)',
+      shadowOpacity: .1,
+
     },
   };
 
@@ -25,11 +30,18 @@ export default class ActionScreen extends React.Component {
   componentDidMount(){
     action_list = [
       {"text": "Interested", "color": "#e91e63"},
-      {"text": "Blaze", "color": "#ff4081"},
+      {"text": "Smoke Sesh", "color": "#ff4081"},
       {"text": "Hangout", "color": "#5677fc"},
-      {"text": "Go out", "color": "#40c4ff"}, 
+      {"text": "Go Somewhere", "color": "#40c4ff"}, 
       {"text": "Chill", "color": "#5af158"},
-      {"text": "Chow down", "color": "#ffd740"},]
+      {"text": "Chow Down", "color": "#ffd740"},]
+
+      // {"text": "Interested", "color": "#fff"},
+      // {"text": "Smoke Sesh", "color": "#fff"},
+      // {"text": "Hangout", "color": "#fff"},
+      // {"text": "Go Somewhere", "color": "#fff"}, 
+      // {"text": "Chill", "color": "#fff"},
+      // {"text": "Chow Down", "color": "#fff"},]
     this.setState({
       actions: action_list,
     })
@@ -38,7 +50,7 @@ export default class ActionScreen extends React.Component {
   render() {
     const {navigate} = this.props.navigation;
     return (
-      <ScrollView>
+      <ScrollView style={styles.container}>
         <FlatList
           data={this.state.actions}
           keyExtractor={(item, index) => index.toString()}
@@ -52,7 +64,7 @@ export default class ActionScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 15,
-    backgroundColor: '#fff',
+    backgroundColor: 'rgb(248, 248, 249)',
+    // backgroundColor: 'black',
   },
 });

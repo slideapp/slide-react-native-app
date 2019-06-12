@@ -8,12 +8,16 @@ export default class ContactScreen extends React.Component {
   static navigationOptions = {
     title: 'Contacts',
     headerTitleStyle: {
-      fontSize: 28,
+      fontSize: 24,
       fontFamily: 'System',
-      color: "white",
+      color: 'rgb(68, 73, 84)',
     },
     headerStyle: {
-      backgroundColor: '#16D8C0',
+      backgroundColor: '#fff',
+      borderBottomWidth: 0,
+      shadowOffset:{  width: 0 ,  height: .2,  },
+      shadowColor: 'rgb(68, 73, 84)',
+      shadowOpacity: .1,
     },
   };
 
@@ -71,7 +75,7 @@ export default class ContactScreen extends React.Component {
       btn_color = "#16D8C0";
     }
     return (
-      <ScrollView>
+      <ScrollView style={styles.container}>
         <FlatList
           data={this.state.contacts}
           keyExtractor={(item, index) => index.toString()}
@@ -85,7 +89,6 @@ export default class ContactScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 15,
-    backgroundColor: '#fff',
+    backgroundColor: 'rgb(248, 248, 249)',
   },
 });

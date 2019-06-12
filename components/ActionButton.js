@@ -27,18 +27,23 @@ export default class ActionButton extends React.Component {
 
 const styles = StyleSheet.create({
     main: {
-      marginRight: 8,
-      marginLeft: 8,
-      marginTop: 10,
-      height: 80,
-      borderRadius: 20,
+      marginRight: 18,
+      marginLeft: 18,
+      marginTop: 18,
+      height: 70,
+      borderRadius: 13,
       backgroundColor: "#16D8C0",
       justifyContent: 'center',
       alignItems: 'center',
+
+      shadowOffset:{  width: .1 ,  height: .5,  },
+      shadowColor: 'rgb(230, 230, 230)',
+      shadowOpacity: .8,
     },
     title: {
-      color: "black",
-      fontSize: 35,
+      // color: 'rgb(68, 73, 84)',
+      color: 'white',
+      fontSize: 20,
       fontFamily: 'System',
       fontWeight: 'bold',
     },

@@ -7,6 +7,8 @@ import ContactScreen from '../screens/ContactScreen';
 import ActionScreen from '../screens/ActionScreen';
 import NotificationScreen from '../screens/NotificationScreen';
 
+import { Icon } from 'react-native-elements'; // Icons for tab navigator
+
 const HomeStack = createStackNavigator({
   Action: ActionScreen,
   Contact: ContactScreen,
@@ -17,7 +19,7 @@ HomeStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+      name={'md-home'}
     />
   ),
 };
@@ -31,7 +33,7 @@ NotificationStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+      name={'md-chatbubbles'}
     />
   ),
 };
@@ -39,4 +41,14 @@ NotificationStack.navigationOptions = {
 export default createBottomTabNavigator({
   HomeStack,
   NotificationStack,
+}, 
+{
+  tabBarOptions: {
+    style: {
+      borderTopColor: "transparent",
+      shadowOffset:{  width: 0 ,  height: .2,  },
+      shadowColor: 'rgb(68, 73, 84)',
+      shadowOpacity: .1,
+    }
+  }
 });

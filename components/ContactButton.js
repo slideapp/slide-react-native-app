@@ -18,7 +18,7 @@ export default class ContactButton extends React.Component {
 
     // Conditional Styling
     if (this.state.expanded){
-      btn_size = {"height": 110};
+      btn_size = {"height": 120};
     } else {
       btn_size = {"height": 60};
     }
@@ -41,7 +41,7 @@ export default class ContactButton extends React.Component {
           </View>
           { this.state.expanded && 
             <View style={styles.extended}>
-                <Text style={styles.extendedText}> Send </Text>
+                <Text style={styles.extendedText}>Send Anonymously</Text>
             </View>
           }
         </View>
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     main: {
       backgroundColor: 'white',
       borderColor: "black",
-      borderRadius: 10,
+      borderRadius: 13,
       padding: 10,
       marginRight: 8,
       marginLeft: 8,
@@ -76,11 +76,14 @@ const styles = StyleSheet.create({
       alignItems: "center",
       justifyContent: "center",
       backgroundColor: "black",
+
+      marginLeft: 15,
+      marginRight: 15,
       borderRadius: 30,
     },
     extendedText: {
       color: "white",
-      fontSize: 28,
+      fontSize: 20,
       fontFamily: "System",
     },
     nameContainer: {
@@ -89,8 +92,8 @@ const styles = StyleSheet.create({
       paddingLeft: "2%",
     },
     names: {
-      color: "black",
-      fontSize: 28,
+      color: "white",
+      fontSize: 20,
       fontWeight: "bold",
       fontFamily: "System",
     },
